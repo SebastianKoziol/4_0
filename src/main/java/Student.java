@@ -2,10 +2,12 @@ public class Student {
 
   private String Name;
   private int Age;
+  private String lastName;
 
   public Student(String name, int age) {
     Name = name;
     Age = age;
+    lastName = lastName;
   }
 
   public String GetName() {return Name;}

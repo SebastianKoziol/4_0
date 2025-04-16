@@ -13,20 +13,38 @@ import java.io.IOException;
 class Main {
   public static void main(String[] args) {
     try {
-
       Scanner skan = new Scanner(System.in);
-      System.out.println("Podaj imie: ");
-      String name = skan.nextLine();
-      System.out.println("Podaj wiek: ");
-      int age = skan.nextInt();
-      Student s1 = new Student(name, age);
-      System.out.println(s1.ToString());
-
       Service s = new Service();
-      var students = s.getStudents();
-      for (Student current : students) {
-        System.out.println(current.ToString());
+      String imie;
+      int age;
+      int x;
+      while (true) {
+
+        System.out.println("Co chciabys zrobić?");
+        System.out.println("1. Dodaj studenta");
+        System.out.println("2. Wypisz studentów");
+        System.out.println("0. Wyjście ");
+        System.out.println(" \n");
+        x = skan.nextInt();
+        switch (x) {
+          case 1:
+            System.out.println("Podaj imie: ");
+            imie = skan.next();
+            System.out.println("Podaj wiek: ");
+            age = skan.nextInt();
+            Student s1 = new Student(imie, age);
+            s.addStudent(s1);
+            break;
+          case 2:
+
+            var students = s.getStudents();
+            for (Student current : students) {
+              System.out.println(current.ToString());
+            }
+            break;
+        }
       }
+
     } catch (IOException e) {
 
     }
