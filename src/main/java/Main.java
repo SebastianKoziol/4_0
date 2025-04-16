@@ -15,7 +15,8 @@ class Main {
     try {
       Scanner skan = new Scanner(System.in);
       Service s = new Service();
-      String imie;
+      String name;
+      String surName;
       int age;
       int x;
       while (true) {
@@ -29,10 +30,12 @@ class Main {
         switch (x) {
           case 1:
             System.out.println("Podaj imie: ");
-            imie = skan.next();
+            name = skan.next();
+            System.out.println("Podaj nazwisko: ");
+            surName = skan.next();
             System.out.println("Podaj wiek: ");
             age = skan.nextInt();
-            Student s1 = new Student(imie, age);
+            Student s1 = new Student(name, surName, age);
             s.addStudent(s1);
             break;
           case 2:
@@ -42,9 +45,10 @@ class Main {
               System.out.println(current.ToString());
             }
             break;
+          case 0:
+            System.exit(0);
         }
       }
-
     } catch (IOException e) {
 
     }
