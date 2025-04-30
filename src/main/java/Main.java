@@ -17,6 +17,7 @@ class Main {
       Service s = new Service();
       String name;
       String surName;
+      int day, month, year;
       int age;
       int x;
       while (true) {
@@ -35,7 +36,26 @@ class Main {
             surName = skan.next();
             System.out.println("Podaj wiek: ");
             age = skan.nextInt();
-            Student s1 = new Student(name, surName, age);
+            System.out.println("Podaj dzien urodzenia : ");
+            day = skan.nextInt();
+
+            if (day < 1 || day > 31) {
+              System.out.println("Podaj poprawny dzien urodzenia : ");
+              day = skan.nextInt();
+            }
+            System.out.println("Podaj miesiac urodzenia : ");
+            month = skan.nextInt();
+            if (month < 1 || month > 12) {
+              System.out.println("Podaj poprawny miesiac urodzenia : ");
+              month = skan.nextInt();
+            }
+            System.out.println("Podaj rok urodzenia : ");
+            year = skan.nextInt();
+            if (year < 1 || year > 3000) {
+              System.out.println("Podaj poprawny rok urodzenia : ");
+              year = skan.nextInt();
+            }
+            Student s1 = new Student(name, surName, age, day, month, year);
             s.addStudent(s1);
             break;
           case 2:
