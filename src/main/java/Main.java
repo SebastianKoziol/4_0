@@ -75,7 +75,6 @@ class Main {
             else
               System.out.println("Nie znaleziono studenta o imieniu " + name);
             break;
-
           case 0:
             System.exit(0);
         }

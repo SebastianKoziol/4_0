@@ -31,10 +31,12 @@ public class Service {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
-    // for (Student student : getStudents())
-    //   if (student.GetName().equals(name))
-    //     return student;|
+  public Student findStudentByName(String name) throws IOException {
+    for (Student student : getStudents()) {
+      if (student.GetName().equals(name))
+        return student;
+    }
+    return null;
+  }
     
   }
-}
